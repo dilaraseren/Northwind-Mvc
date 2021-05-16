@@ -1,0 +1,32 @@
+﻿@using NetCoreMvc.Models.Classes;
+@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+
+        <th>#</th>
+        <th>Product Name</th>
+        <th>Unit Price</th>
+        <th>Units In Stock</th>
+
+
+    </tr>
+
+    @foreach (var p in Model)
+    {
+
+        <tr>
+            <th> @p.ProductId </th>
+            <td> @p.ProductName </td>
+            <td> @p.UnitPrice </td>
+            <td> @p.UnitsInStock </td>
+
+        </tr>
+    }
+</table>
+
